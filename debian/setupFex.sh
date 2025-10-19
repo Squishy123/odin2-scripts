@@ -1,11 +1,16 @@
 #!/bin/bash 
 
 # install dependencies
-sudo apt install -y debootstrap patchelf squashfs-tools
+# sudo apt install -y debootstrap patchelf squashfs-tools
 
 # need to add this to bashrc for certain commands necessary in chroot
-grep -q '/sbin:/bin' ~/.bashrc || echo 'export PATH=$PATH:/sbin:/bin' >> ~/.bashrc
+if ! grep -q '/sbin:/bin' ~/.bashrc; then
+  echo 'export PATH=$PATH:/sbin:/bin' >> ~/.bashrc
+fi
+
 source ~/.bashrc
+
+exit
 
 cd "$(dirname "$0")"
 
