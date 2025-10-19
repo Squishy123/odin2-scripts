@@ -1,5 +1,9 @@
 #!/bin/bash 
-sudo apt update && sudo apt install -y \
+
+# install dependencies
+sudo apt update && sudo apt install -y \ 
+  python3 \ 
+  python3-pip \
   git \
   cmake \
   ninja-build \
@@ -21,7 +25,7 @@ sudo apt update && sudo apt install -y \
   libstdc++-12-dev-arm64-cross \
   squashfs-tools \
   squashfuse \
-  glibc-tools \
+  libc-devtools \
   libc6-dev-i386-amd64-cross \
   lib32stdc++-12-dev-amd64-cross \
   qtdeclarative5-dev \
@@ -29,9 +33,12 @@ sudo apt update && sudo apt install -y \
   qml-module-qtquick-controls2 \
   qml-module-qtquick-dialogs
 
+pip install meson --break-system
+
 cd ~ 
 mkdir -p sys && cd sys 
 
+# build fex
 git clone --recurse-submodules https://github.com/FEX-Emu/FEX.git
 cd FEX
 mkdir Build
