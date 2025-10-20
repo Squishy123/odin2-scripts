@@ -76,13 +76,25 @@ sudo apt install -y \
   ocl-icd-opencl-dev \
   libgstreamer-plugins-base1.0-dev
 
+wget https://github.com/bylaws/llvm-mingw/releases/download/20250920/llvm-mingw-20250920-ucrt-ubuntu-22.04-aarch64.tar.xz -P ~/sys
+tar -xvf ~/sys/llvm-mingw-20250920-ucrt-ubuntu-22.04-aarch64.tar.xz -C ~/sys
+
+TOOLCHAIN_PATH=$(realpath ~/sys/llvm-mingw-20250920-ucrt-ubuntu-22.04-aarch64)
+
+echo $TOOLCHAIN_PATH
+
+if ! grep -q "$TOOLCHAIN_PATH" ~/.bashrc; then
+  echo "export PATH=\"$TOOLCHAIN_PATH/bin:\$PATH\"" >> ~/.bashrc
+fi
+source ~/.bashrc
+
 cd ~ 
 mkdir -p sys && cd sys
 
-git clone https://github.com/bylaws/wine.git
+git clone --depth=1 -b upstream-arm64ec https://github.com/bylaws/wine.git 
 cd wine 
 
- ./configure --enable-archs=arm64ec,aarch64,i386 --prefix=/usr --with-mingw=clang --disable-tests
- make -j$(nproc)
- sudo --preserve-env=PATH make install -j$(nproc)
+./configure --enable-archs=arm64ec,aarch64,i386 --prefix=/usr --with-mingw=clang --disable-tests
+make -j$(nproc)
+sudo --preserve-env=PATH make install -j$(nproc)
 
