@@ -1,19 +1,6 @@
 #!/bin/bash
 
-# RUN THIS AFTER installFex.sh
-
-# download tool chain
-wget https://github.com/mstorsjo/llvm-mingw/releases/download/20251007/llvm-mingw-20251007-msvcrt-ubuntu-22.04-x86_64.tar.xz -P ~/sys
-tar -xvf ~/sys/llvm-mingw-20251007-msvcrt-ubuntu-22.04-x86_64.tar.xz -C ~/sys
-
-TOOLCHAIN_PATH=$(realpath ~/sys/llvm-mingw-20251007-msvcrt-ubuntu-22.04-x86_64)
-
-echo $TOOLCHAIN_PATH
-
-if ! grep -q "$TOOLCHAIN_PATH" ~/.bashrc; then
-  echo "export PATH=\"$TOOLCHAIN_PATH/bin:\$PATH\"" >> ~/.bashrc
-fi
-source ~/.bashrc
+# RUN THIS AFTER installFex.sh, installWineWithArm64EC
 
 cd ~/sys/FEX 
 
