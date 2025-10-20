@@ -1,5 +1,9 @@
 #!/bin/bash 
 
+sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+sudo dpkg --add-architecture i386
+sudo apt update
+
 # install dependencies
 sudo apt install -y \
   debhelper-compat \
@@ -76,6 +80,7 @@ sudo apt install -y \
   ocl-icd-opencl-dev \
   libgstreamer-plugins-base1.0-dev
 
+
 wget https://github.com/bylaws/llvm-mingw/releases/download/20250920/llvm-mingw-20250920-ucrt-ubuntu-22.04-aarch64.tar.xz -P ~/sys
 tar -xvf ~/sys/llvm-mingw-20250920-ucrt-ubuntu-22.04-aarch64.tar.xz -C ~/sys
 
@@ -91,11 +96,24 @@ source ~/.bashrc
 cd ~ 
 mkdir -p sys && cd sys
 
-git clone --depth=1 -b upstream-arm64ec https://github.com/bylaws/wine.git 
+git clone --depth=1 -b upstream-arm64ec https://github.com/bylaws/wine.git
+
 cd wine 
 
-./configure --enable-archs=arm64ec,aarch64,i386 --prefix=/usr --with-mingw=clang --disable-tests
+mkdir -p wine-32-build
+mkdir -p wine-64-build
+
+cd wine-64-build
+../configure --enable-archs=arm64ec,aarch64,i386 --prefix=/usr --with-mingw=clang --disable-tests --enable-win64
 make -j$(nproc)
+
+
+cd ../wine-32-build
+PKG_CONFIG_PATH=/usr/lib/i686-linux-gnu ../configure --enable-archs=arm64ec,aarch64,i386 --prefix=/usr --with-mingw=clang --disable-tests --with-wine64=../wine-64-build
+make -j$(nproc)
+sudo --preserve-env=PATH make install -j$(nproc) # install 32bit first
+
+cd ../wine-64-build
 sudo --preserve-env=PATH make install -j$(nproc)
 
 
