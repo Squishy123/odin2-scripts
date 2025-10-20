@@ -81,3 +81,14 @@ sed -i '/ChrootArgs\.append(os\.environ\['\''SHELL'\''\])/,+1c\
 ./chroot.py chroot /bin/bash -c "dpkg --add-architecture i386 && apt-get update && apt install -y mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386"
 
 
+# configure fex to use chroot 
+
+cat <<EOF > ~/.fex-emu/Config.json
+{
+    "Config": {
+        "MaxInst": "5000",
+        "RootFS": "Ubuntu_24_04"
+    }
+}
+EOF
+
