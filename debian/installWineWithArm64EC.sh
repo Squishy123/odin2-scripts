@@ -91,6 +91,8 @@ echo $TOOLCHAIN_PATH
 if ! grep -q "$TOOLCHAIN_PATH" ~/.bashrc; then
   echo "export PATH=\"$TOOLCHAIN_PATH/bin:\$PATH\"" >> ~/.bashrc
 fi
+
+export PATH="$TOOLCHAIN_PATH/bin:$PATH"
 source ~/.bashrc
 
 cd ~ 
