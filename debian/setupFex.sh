@@ -1,18 +1,14 @@
 #!/bin/bash 
 
 # install dependencies
-# sudo apt install -y debootstrap patchelf squashfs-tools
+sudo apt install -y debootstrap patchelf squashfs-tools
 
 # need to add this to bashrc for certain commands necessary in chroot
 if ! grep -q '/sbin:/bin' ~/.bashrc; then
-  echo 'export PATH=$PATH:/sbin:/bin' >> ~/.bashrc
+    echo 'export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH' >> ~/.bashrc
 fi
 
 source ~/.bashrc
-
-exit
-
-cd "$(dirname "$0")"
 
 # fetch and extract ubuntu rootfs
 wget "https://rootfs.fex-emu.gg/Ubuntu_24_04/2025-03-04/Ubuntu_24_04.sqsh" -P ~/.fex-emu/RootFS/ 
@@ -21,7 +17,7 @@ unsquashfs -d ~/.fex-emu/RootFS/Ubuntu_24_04 ~/.fex-emu/RootFS/Ubuntu_24_04.sqsh
 
 # execute commands inside chroot to get drivers
 cd ~/.fex-emu/RootFS/Ubuntu_24_04/ 
-./chroot chroot
+./chroot.py chroot
 
 dpkg --add-architecture i386
 apt-get update
