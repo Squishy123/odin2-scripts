@@ -20,17 +20,15 @@ cd ~/.fex-emu/RootFS/Ubuntu_24_04/
 
 
 # have to rewrite the chroot command to allow us to pass in commands 
-sed -i '/ChrootArgs.append(os.environ..SHELL.)/{
-N
-c\
-    if len(sys.argv) > 2:\
-        ChrootArgs.extend(sys.argv[2:])\
-    else:\
-        ChrootArgs.append(os.environ["SHELL"])\
-        ChrootArgs.append("-i")
-}' chroot.py
+sed -i '/ChrootArgs\.append(os\.environ\['\''SHELL'\''\])/,+1c\
+        if len(sys.argv) > 2:\
+            ChrootArgs.extend(sys.argv[2:])\
+        else:\
+            ChrootArgs.append(os.environ['\''SHELL'\''])\
+            ChrootArgs.append("-i")' filename
 
-./chroot.py chroot /bin/bash "dpkg --add-architecture i386 && apt-get update && apt install mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386"
+
+./chroot.py chroot /bin/bash -c "dpkg --add-architecture i386 && apt-get update && apt install mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386"
 
 
 
