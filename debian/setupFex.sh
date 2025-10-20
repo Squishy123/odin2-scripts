@@ -25,7 +25,7 @@ sed -i '/ChrootArgs\.append(os\.environ\['\''SHELL'\''\])/,+1c\
             ChrootArgs.extend(sys.argv[2:])\
         else:\
             ChrootArgs.append(os.environ['\''SHELL'\''])\
-            ChrootArgs.append("-i")' filename
+            ChrootArgs.append("-i")' chroot.py
 
 
 ./chroot.py chroot /bin/bash -c "dpkg --add-architecture i386 && apt-get update && apt install mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386"
