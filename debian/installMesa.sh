@@ -4,6 +4,8 @@
 sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/debian.sources
 sudo apt update 
 
+sudo apt remove meson # remove old meson
+
 # install dependencies
 sudo apt -y build-dep mesa 
 sudo apt -y install python3 python3-pip
