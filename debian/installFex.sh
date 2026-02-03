@@ -33,8 +33,6 @@ sudo apt install -y python3 \
   qml-module-qtquick-controls2 \
   qml-module-qtquick-dialogs
 
-sudo apt remove meson # remove old meson
-
 pip install meson --break-system
 
 export PATH="$HOME/.local/bin:$PATH"
