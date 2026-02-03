@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/debian.sources
 sudo dpkg --add-architecture i386
 sudo apt update
 
