@@ -9,6 +9,8 @@ sudo apt -y build-dep mesa
 sudo apt -y install python3 python3-pip
 pip install meson --break-system
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # build mesa inside sys folder
 cd ~ 
 mkdir -p sys && cd sys 

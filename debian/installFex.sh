@@ -35,6 +35,8 @@ sudo apt install -y python3 \
 
 pip install meson --break-system
 
+export PATH="$HOME/.local/bin:$PATH"
+
 cd ~ 
 mkdir -p sys && cd sys 
 
