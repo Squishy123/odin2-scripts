@@ -33,7 +33,7 @@ sudo apt install -y python3 \
   qml-module-qtquick-controls2 \
   qml-module-qtquick-dialogs
 
-sudo apt purge meson
+sudo apt purge -y meson
 sudo pip install meson --break-system
 
 export PATH="$HOME/.local/bin:$PATH"

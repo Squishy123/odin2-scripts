@@ -7,7 +7,7 @@ sudo apt update
 # install dependencies
 sudo apt -y build-dep mesa 
 sudo apt -y install python3 python3-pip
-sudo apt purge meson
+sudo apt purge -y meson
 sudo pip install meson --break-system
 
 export PATH="$HOME/.local/bin:$PATH"
