@@ -20,6 +20,6 @@ git clone https://gitlab.freedesktop.org/mesa/mesa.git
 cd mesa 
 
 # yes!
-mesonExec setup build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno
-mesonExec compile -C build/
-sudo mesonExec install -C build
+"$mesonExec" setup build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno
+"$mesonExec" compile -C build/
+sudo "$mesonExec" install -C build
