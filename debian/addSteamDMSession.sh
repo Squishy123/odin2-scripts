@@ -12,7 +12,7 @@ fi
 
 
 # install gamescope and polkit 
-sudo apt install -y gamescope policykit-1 mangohud mangoapp
+sudo apt install -y gamescope polkitd mangohud mangoapp
 
 # Write the desktop entry
 cat <<EOF > "$DESKTOP_FILE"
