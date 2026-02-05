@@ -31,7 +31,15 @@ sudo apt install -y python3 \
   qtdeclarative5-dev \
   qml-module-qtquick-controls \
   qml-module-qtquick-controls2 \
-  qml-module-qtquick-dialogs
+  qml-module-qtquick-dialogs \
+  libclang-dev \
+  libdrm-dev \
+  libxcb-present-dev \
+  libxcb-dri2-0-dev \
+  libxcb-dri3-dev \
+  libxcb-glx0-dev \
+  libxcb-shm0-dev \
+  libxshmfence-dev
 
 sudo apt purge -y meson
 sudo pip install meson --break-system
