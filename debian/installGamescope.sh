@@ -1,3 +1,3 @@
 #!/bin/bash 
 
-sudo apt install mangoapp mangohud
+sudo apt install -y gamescope mangoapp mangohud
