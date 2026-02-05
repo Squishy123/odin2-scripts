@@ -19,7 +19,7 @@ cat <<EOF > "$DESKTOP_FILE"
 [Desktop Entry]
 Name=Steam Big Picture Mode
 Comment=Start Steam in Big Picture Mode
-Exec=/usr/bin/gamescope -e -- FEXBash steam -tenfoot
+Exec=/usr/games/gamescope -e -- FEXBash steam -tenfoot
 Type=Application
 EOF
 
