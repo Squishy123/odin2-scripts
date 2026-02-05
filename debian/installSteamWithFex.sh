@@ -11,7 +11,7 @@ cat > "$HOME/.local/share/applications/steam-fex.desktop" <<EOF
 Type=Application
 Name=Steam (FEX)
 Comment=Launch Steam using FEX
-Exec=bash -lc "FEXBash steam"
+Exec=bash -lc "STEAMOS=1 STEAM_RUNTIME=1 FEXBash steam"
 Icon=steam
 Terminal=false
 Categories=Game;
