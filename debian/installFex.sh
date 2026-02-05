@@ -93,3 +93,23 @@ cat <<EOF > ~/.fex-emu/Config.json
 }
 EOF
 
+
+
+# add app launcher for fexconfig
+mkdir -p "$HOME/.local/share/applications"
+
+cat > "$HOME/.local/share/applications/fexconfig.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=FEXConfig
+Comment=Launch FEX Configuration Tool
+Exec=bash -lc "FEXConfig"
+Icon=preferences-system
+Terminal=false
+Categories=Settings;Utility;
+StartupNotify=true
+EOF
+
+chmod +x "$HOME/.local/share/applications/fexconfig.desktop"
+
+echo "FEXConfig shortcut created."
