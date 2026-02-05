@@ -31,10 +31,21 @@ sudo apt install -y python3 \
   qtdeclarative5-dev \
   qml-module-qtquick-controls \
   qml-module-qtquick-controls2 \
-  qml-module-qtquick-dialogs
+  qml-module-qtquick-dialogs \
+  libclang-dev \
+  libdrm-dev \
+  libxcb-present-dev \
+  libxcb-dri2-0-dev \
+  libxcb-dri3-dev \
+  libxcb-glx0-dev \
+  libxcb-shm0-dev \
+  libxshmfence-dev
 
 sudo apt purge -y meson
 sudo pip install meson --break-system
+
+# install nix
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -46,7 +57,8 @@ git clone --recurse-submodules https://github.com/FEX-Emu/FEX.git
 cd FEX
 mkdir Build
 cd Build
-CC=clang CXX=clang++ cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DUSE_LINKER=lld -DENABLE_LTO=True -DBUILD_TESTING=False -DENABLE_ASSERTIONS=False -G Ninja ..
+../Data/nix/cmake_enable_libfwd.sh
+CC=clang CXX=clang++ cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DUSE_LINKER=lld -DENABLE_LTO=True -DBUILD_TESTING=False -DENABLE_ASSERTIONS=False -DBUILD_THUNKS=True -G Ninja ..
 ninja
 
 sudo ninja install
