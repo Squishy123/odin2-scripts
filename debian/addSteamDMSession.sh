@@ -16,7 +16,7 @@ fi
 sudo apt install -y polkitd  
 
 # copy over steamdm 
-cp -R debian/steamdm/* ~/.local/bin
+cp debian/steamdm/* ~/.local/bin
 
 # Write the desktop entry
 cat <<EOF > "$DESKTOP_FILE"
