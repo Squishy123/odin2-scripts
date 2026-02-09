@@ -1,4 +1,6 @@
 #!/bin/bash
+cd ~/sys/odin2-scripts
+
 set -e
 
 DESKTOP_FILE="/usr/share/wayland-sessions/steam-big-picture.desktop"
@@ -10,16 +12,18 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 
+# install polkit 
+sudo apt install -y polkitd  
 
-# install gamescope and polkit 
-sudo apt install -y gamescope polkitd mangohud mangoapp
+# copy over steamdm 
+cp -R debian/steamdm/* ~/.local/bin
 
 # Write the desktop entry
 cat <<EOF > "$DESKTOP_FILE"
 [Desktop Entry]
 Name=Steam Big Picture Mode
 Comment=Start Steam in Big Picture Mode
-Exec=/usr/games/gamescope -e -- FEX /usr/bin/steam -tenfoot
+Exec=/home/odin2/.local/bin/gamescope-session
 Type=Application
 EOF
 

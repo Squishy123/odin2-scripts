@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sleep 10 && gamescopectl adaptive_sync_ignore_overlay 1 &
+STEAM_GAMESCOPE_VRR_SUPPORTED=1 STEAM_MULTIPLE_XWAYLANDS=1 gamescope --mangoapp -W 1920 -H 1080 -r 60 -O DSI-1 -e --xwayland-count 2 -- FEX steam -steamdeck -steamos3
