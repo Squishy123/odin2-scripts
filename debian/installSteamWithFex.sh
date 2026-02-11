@@ -34,3 +34,5 @@ chmod +x "$HOME/.local/share/applications/steam-fex.desktop"
 chmod +x "$HOME/.local/share/applications/steam-big-picture.desktop"
 
 echo "Steam (FEX) shortcut created."
+
+FEXBash steam
