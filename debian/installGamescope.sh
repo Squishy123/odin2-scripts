@@ -7,7 +7,7 @@ git clone https://github.com/ValveSoftware/gamescope.git
 
 cd gamescope 
 
-git submodule update --init --recursive
+git submodule update --init
 
 ~/sys/odin2-scripts/install-meson-deps.sh meson.build 
 
