@@ -16,4 +16,4 @@ sudo apt install -y libluajit-5.1-dev
 
 meson setup build/
 ninja -C build/
-meson install -C build/ --skip-subprojects
+sudo meson install -C build/ --skip-subprojects
