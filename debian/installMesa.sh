@@ -20,14 +20,7 @@ cd mesa
 git checkout mesa-25.3.5
 
 # yes!
-meson setup --reconfigure build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno -Dtools=freedreno
+meson setup --reconfigure build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno -Dtools=freedreno -Dbuildtype=release
 meson compile -C build/
 sudo meson install -C build
 
-cd ~ 
-mkdir -p sys && cd sys 
-git clone https://github.com/KhronosGroup/Vulkan-Tools.git
-cd Vulkan-Tools
-
-cmake -S . -B build -D UPDATE_DEPS=ON -D BUILD_WERROR=ON -D BUILD_TESTS=ON -D CMAKE_BUILD_TYPE=Debug
-cmake --build build --config Debug
