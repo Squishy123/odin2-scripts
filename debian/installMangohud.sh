@@ -6,5 +6,8 @@ mkdir -p sys && cd sys
 git clone --recurse-submodules https://github.com/flightlessmango/MangoHud.git
 cd MangoHud
 
-./build.sh build -Dmangoapp=true -Dmangohudctl=true
+~/sys/odin2-scripts/install-meson-deps.sh meson.build 
+
+meson build --prefix=/usr -Dmangoapp=true -Dmangohudctl=true
+ninja -C build install 
 
