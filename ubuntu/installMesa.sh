@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # add deb-src to sources
-sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/ubuntu.sources
+sudo sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/debian.sources
 sudo apt update 
 
 # install dependencies
