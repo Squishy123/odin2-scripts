@@ -6,7 +6,7 @@ sudo add-apt-repository -y ppa:fex-emu/fex
 sudo apt update
 
 
-sudo apt install -y wine fex-emu-armv8.4 fex-emu-wine debootstrap patchelf squashfs-tools
+sudo apt install -y fex-emu-armv8.4 fex-emu-wine debootstrap patchelf squashfs-tools
 
 
 # need to add this to bashrc for certain commands necessary in chroot
