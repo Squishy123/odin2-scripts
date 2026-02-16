@@ -56,7 +56,6 @@ if grep -q "^Architectures:" "$FILE"; then
 else
     echo "No Architectures line found — appending..."
     cat <<EOF >> "$FILE"
-
 Architectures: arm64
 EOF
 fi
