@@ -9,7 +9,7 @@ wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /
 
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/questing/winehq-questing.sources
 
-sdo apt update
+sudo apt update
 
-sudo apt install --install-recommends winehq-stable
+sudo apt install --install-recommends -y winehq-stable
 
