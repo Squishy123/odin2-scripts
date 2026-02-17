@@ -7,6 +7,9 @@ mkdir -p sys && cd sys
 
 git clone --recursive https://github.com/ptitSeb/box64
 cd box64
+
+~/sys/odin2-scripts/install-meson-deps.sh meson.build
+
 mkdir build && cd build
 cmake .. -D ARM_DYNAREC=ON -D BOX32=ON -D BOX32_BINFMT=ON -D SD8G2=ON -DWOW64=ON -D CMAKE_BUILD_TYPE=RelWithDebInfo
 make -j"$(nproc)"
