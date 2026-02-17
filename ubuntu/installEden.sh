@@ -10,7 +10,7 @@ cat > "$HOME/.local/share/applications/eden.desktop" <<EOF
 Type=Application
 Name=Eden
 Comment=Launch Eden 
-Exec="$HOME/Eden-Linux-v0.2.0-rc1-aarch64-gcc-standard.AppImage"
+Exec="$HOME/sys/Eden-Linux-v0.2.0-rc1-aarch64-gcc-standard.AppImage"
 Icon=eden
 Terminal=false
 Categories=Game;
