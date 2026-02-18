@@ -13,6 +13,10 @@ fi
 
 ./installBox64.sh 
 
+./fixUbuntuSources.sh
+
+./installWine.sh
+
 ./installFex.sh
 
 ./installSteam.sh
