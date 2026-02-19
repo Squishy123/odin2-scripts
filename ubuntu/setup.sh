@@ -17,10 +17,10 @@ fi
 
 ./installWine.sh
 
-./installFex.sh
-
-./installSteam.sh
-
 ./installWaydroid.sh
 
 ./installEden.sh
+
+./installFex.sh
+
+./installSteam.sh
