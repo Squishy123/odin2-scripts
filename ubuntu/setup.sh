@@ -7,8 +7,6 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-./fixAudio.sh 
-
 ./installLutris.sh 
 
 ./installBox64.sh 
