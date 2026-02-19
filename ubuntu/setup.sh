@@ -7,6 +7,8 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
+./installMesaFromPPA.sh
+
 ./installLutris.sh 
 
 ./installBox64.sh 
