@@ -73,3 +73,12 @@ sudo apt install -y \
    vamp-plugin-sdk libvamp-sdk2v5 libvamp-hostsdk3v5 \
   liblzma-dev \
   zlib1g-dev
+
+cd ~/sys 
+
+git clone git://git.ardour.org/ardour/ardour.git
+
+cd ardour 
+
+python3 waf configure
+python3 waf install
