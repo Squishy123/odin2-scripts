@@ -10,7 +10,7 @@ chmod +x Eden-Linux-v0.2.0-rc1-aarch64-gcc-standard.AppImage
 
 # ./Eden-Linux-v0.2.0-rc1-aarch64-gcc-standard.AppImage --appimage-extract
 
-wget https://downloadr2.apkmirror.com/wp-content/uploads/2025/09/24/68c47ba0566d3_dev.eden.eden_emulator.png dev.eden_emu.eden.png
+wget -O dev.eden_emu.eden.png https://downloadr2.apkmirror.com/wp-content/uploads/2025/09/24/68c47ba0566d3_dev.eden.eden_emulator.png 
 
 cat > "$HOME/.local/share/applications/eden.desktop" <<EOF
 [Desktop Entry]

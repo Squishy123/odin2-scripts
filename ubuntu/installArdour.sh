@@ -84,7 +84,7 @@ python3 waf configure
 python3 waf
 sudo python3 waf install
 
-wget https://avatars.githubusercontent.com/u/1402482?s=280&v=4 ardour-icon.png
+wget -O ardour-icon.png "https://avatars.githubusercontent.com/u/1402482?s=280&v=4"
 
 mkdir -p "$HOME/.local/share/applications"
 
