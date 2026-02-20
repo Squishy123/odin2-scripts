@@ -2,11 +2,6 @@
 
 # SETUP SCRIPT TO RUN A BUNCH OF STUFF SEQUENTIALLY 
 
-if [[ $EUID -ne 0 ]]; then
-    echo "Please run as root (use sudo)"
-    exit 1
-fi
-
 sudo apt reinstall snapd 
 
 ./installMesaFromPPA.sh
