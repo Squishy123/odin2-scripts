@@ -17,7 +17,7 @@ cd ~
 mkdir -p sys && cd sys 
 git clone https://gitlab.freedesktop.org/mesa/mesa.git
 cd mesa 
-# git checkout mesa-25.3.5
+git checkout mesa-25.3.5
 
 # yes!
 meson setup --reconfigure build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno -Dtools=freedreno -Dbuildtype=release
