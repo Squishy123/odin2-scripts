@@ -4,6 +4,8 @@
 
 sudo apt reinstall snapd 
 
+cd ~/sys/odin2-scripts/ubuntu/
+
 ./installMesaFromPPA.sh
 
 ./installLutris.sh 
