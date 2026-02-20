@@ -12,7 +12,7 @@ cd ~/sys/odin2-scripts/ubuntu/
 
 ./installBox64.sh 
 
-./fixUbuntuSources.sh
+sudo ./fixUbuntuSources.sh
 
 ./installWine.sh
 
