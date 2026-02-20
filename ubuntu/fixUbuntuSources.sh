@@ -49,17 +49,13 @@ apt update
 echo "Done."
 
 FILE="/etc/apt/sources.list.d/ubuntu.sources"
-
 if grep -q "^Architectures:" "$FILE"; then
     echo "Replacing existing Architectures line..."
-    sed -i 's/^Architectures:.*/Architectures: arm64/' "$FILE"
+    sudo sed -i 's/^Architectures:.*/Architectures: arm64/' "$FILE"
 else
     echo "No Architectures line found — appending..."
-    cat <<EOF >> "$FILE"
-Architectures: arm64
-EOF
+    echo "Architectures: arm64" | sudo tee -a "$FILE" > /dev/null
 fi
-
 apt update
 
 
