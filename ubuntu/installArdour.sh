@@ -81,4 +81,5 @@ git clone git://git.ardour.org/ardour/ardour.git
 cd ardour 
 
 python3 waf configure
+python3 waf
 python3 waf install
