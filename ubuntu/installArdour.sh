@@ -22,7 +22,7 @@ sudo apt install -y \
   libglib2.0-dev \
   libglibmm-2.4-dev \
   gnome-common \
-  gnome-doc-utils \
+  yelp-tools \
   libgirepository1.0-dev \
   libharfbuzz-dev \
   intltool \
@@ -45,7 +45,7 @@ sudo apt install -y \
   libxslt1-dev \
   liblilv-dev \
   liblrdf-dev \
-  liblv2-dev \
+  lv2-dev \
   m4 \
   make \
   libnss3-dev \
@@ -70,6 +70,6 @@ sudo apt install -y \
   libtiff-dev \
   util-linux \
   uuid-dev \
-  libvamp-sdk2 libvamp-hostsdk3 \
+   vamp-plugin-sdk libvamp-sdk2v5 libvamp-hostsdk3v5 \
   liblzma-dev \
   zlib1g-dev
