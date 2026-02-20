@@ -82,4 +82,18 @@ cd ardour
 
 python3 waf configure
 python3 waf
-python3 waf install
+sudo python3 waf install
+
+mkdir -p "$HOME/.local/share/applications"
+
+cat > "$HOME/.local/share/applications/ardour.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=Ardour
+Comment=Launch Ardour
+Exec=bash -lc "/usr/local/bin/ardour9"
+Icon=/usr/local/etc/ardour9/resources/Ardour-icon_16px.png
+Terminal=false
+Categories=Audio;
+StartupNotify=true
+EOF
