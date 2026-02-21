@@ -72,7 +72,8 @@ sudo apt install -y \
   uuid-dev \
    vamp-plugin-sdk libvamp-sdk2v5 libvamp-hostsdk3v5 \
   liblzma-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  libasound2-dev 
 
 cd ~/sys 
 
