@@ -20,7 +20,7 @@ cd mesa
 git checkout mesa-25.3.5
 
 # yes!
-meson setup --reconfigure build/ -Dprefix=/usr -Dplatforms=x11,wayland -Dvulkan-drivers=freedreno -Dgallium-drivers=freedreno -Dtools=freedreno -Dbuildtype=release
+meson setup --reconfigure build/ -Dprefix=/usr -Dplatforms=wayland,x11 -Dgallium-drivers=freedreno -Dvulkan-drivers=freedreno -Dfreedreno-kmds=msm -Dbuildtype=debugoptimized
 meson compile -C build/
 sudo meson install -C build
 
